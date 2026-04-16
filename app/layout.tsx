@@ -9,7 +9,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'Matmon Technology - Sovereign Data Center in Kisumu, Kenya',
   description: 'Kenya\'s first sovereign data center in Kisumu. DPA compliant colocation, managed analytics, and private cloud solutions for African businesses.',
-  generator: 'v0.app',
+  generator: 'Matmon Technology',
   icons: {
     icon: [
       {

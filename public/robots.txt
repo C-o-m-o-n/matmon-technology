@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /_next
+Disallow: /api
 
-Sitemap: https://matmon.tech/sitemap.xml
+Sitemap: https://matmonafrica.com/sitemap.xml

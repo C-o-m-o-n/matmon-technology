@@ -187,7 +187,7 @@ export default function Home() {
       </SectionContainer>
 
       {/* CTA Section - Bold Call to Action */}
-      <SectionContainer className="py-24 px-6">
+      {/* <SectionContainer className="py-24 px-6">
         <div className="glass-card bg-primary p-20 lg:p-32 text-center overflow-hidden relative border-none">
           <GlowSphere color="blue" size="xl" className="-bottom-1/2 -left-1/4 opacity-30" />
           <h2 className="text-3xl sm:text-7xl font-black leading-[1.1] sm:leading-[0.9] tracking-tighter mb-12 text-black max-w-4xl mx-auto">
@@ -197,7 +197,7 @@ export default function Home() {
             <Link href="/contact">Get Started Now</Link>
           </Button>
         </div>
-      </SectionContainer>
+      </SectionContainer> */}
 
       {/* Pricing Section - Neon Highlight */}
       <SectionContainer className="py-32 lg:py-48 relative">
