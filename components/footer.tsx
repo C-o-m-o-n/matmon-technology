@@ -3,68 +3,77 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-card/50">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-8 md:grid-cols-4">
-          {/* Company Info */}
-          <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="h-6 w-6 rounded bg-primary"></div>
-              <span className="font-bold">Matmon</span>
-            </div>
-            <p className="text-sm text-foreground/70">
-              Kenya&apos;s sovereign data center in Kisumu, enabling African businesses to own their data.
+    <footer className="bg-background pt-24 pb-12 overflow-hidden relative">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-12 mb-24">
+          <div className="sm:col-span-2 lg:col-span-2">
+            <Link href="/" className="flex items-center gap-2 font-bold text-2xl mb-6">
+              <div className="h-6 w-6 rounded-full bg-primary shadow-glow-red/50"></div>
+              <span>MATMON</span>
+            </Link>
+            <p className="text-muted-foreground max-w-xs text-sm leading-relaxed">
+              Kenya&apos;s sovereign data center operator. Enabling African businesses to own their data and power the next generation of digital infrastructure.
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="text-foreground/70 hover:text-primary transition-colors">Home</Link></li>
-              <li><Link href="/about" className="text-foreground/70 hover:text-primary transition-colors">About</Link></li>
-              <li><Link href="/infrastructure" className="text-foreground/70 hover:text-primary transition-colors">Infrastructure</Link></li>
-              <li><Link href="/services" className="text-foreground/70 hover:text-primary transition-colors">Services</Link></li>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-6">Ecosystem</h3>
+            <ul className="space-y-4 text-sm text-muted-foreground font-medium">
+              <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
+              <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link href="/infrastructure" className="hover:text-primary transition-colors">Infrastructure</Link></li>
+              <li><Link href="/services" className="hover:text-primary transition-colors">Services</Link></li>
             </ul>
           </div>
 
-          {/* Resources */}
           <div>
-            <h3 className="font-semibold mb-4">Resources</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/compliance" className="text-foreground/70 hover:text-primary transition-colors">Compliance</Link></li>
-              <li><Link href="/contact" className="text-foreground/70 hover:text-primary transition-colors">Contact</Link></li>
-              <li><a href="#" className="text-foreground/70 hover:text-primary transition-colors">Data Center Bible</a></li>
-              <li><a href="#" className="text-foreground/70 hover:text-primary transition-colors">Blog</a></li>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-6">Resources</h3>
+            <ul className="space-y-4 text-sm text-muted-foreground font-medium">
+              <li><Link href="/compliance" className="hover:text-primary transition-colors">Compliance</Link></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Press</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">FAQ</a></li>
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h3 className="font-semibold mb-4">Contact</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2 text-foreground/70">
-                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>Kisumu, Kenya</span>
-              </li>
-              <li className="flex items-center gap-2 text-foreground/70">
-                <Mail className="h-4 w-4" />
-                <a href="mailto:info@matmon.tech" className="hover:text-primary transition-colors">info@matmon.tech</a>
-              </li>
-              <li className="flex items-center gap-2 text-foreground/70">
-                <Phone className="h-4 w-4" />
-                <a href="tel:+254" className="hover:text-primary transition-colors">+254 (0) 700 000 000</a>
-              </li>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-6">Web3</h3>
+            <ul className="space-y-4 text-sm text-muted-foreground font-medium">
+              <li><a href="#" className="hover:text-primary transition-colors">Whitepaper</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Staking</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Governance</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Foundation</a></li>
             </ul>
+          </div>
+
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-6">Community</h3>
+            <div className="flex flex-col gap-4">
+              <Link href="/contact" className="text-sm text-muted-foreground font-medium hover:text-primary transition-colors">Contact Support</Link>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-8 border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-foreground/60">
-          <p>© 2024 Matmon Technology. All rights reserved.</p>
-          <p>Powered by Matmon Technology • Kisumu, Kenya • DPA 2019 Compliant</p>
+        <div className="border-t border-white/5 pt-12 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+          <p className="text-xs text-muted-foreground">© 2026 Matmon Technology (Kenya). All rights reserved.</p>
+          <div className="flex gap-4">
+            <a href="#" className="h-10 w-10 rounded-full border border-white/5 flex items-center justify-center hover:bg-white/5 transition-colors">
+              <Mail className="h-4 w-4" />
+            </a>
+            <a href="#" className="h-10 w-10 rounded-full border border-white/5 flex items-center justify-center hover:bg-white/5 transition-colors">
+              <Phone className="h-4 w-4" />
+            </a>
+            <a href="#" className="h-10 w-10 rounded-full border border-white/5 flex items-center justify-center hover:bg-white/5 transition-colors">
+              <MapPin className="h-4 w-4" />
+            </a>
+          </div>
+          <div className="flex gap-6 text-xs text-muted-foreground font-medium">
+            <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <a href="#" className="hover:text-white transition-colors">Privacy</a>
+          </div>
         </div>
       </div>
     </footer>
   );
 }
+

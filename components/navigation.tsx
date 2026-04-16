@@ -15,29 +15,28 @@ export function Navigation() {
 
   const links = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Us' },
+    { href: '/about', label: 'About' },
     { href: '/infrastructure', label: 'Infrastructure' },
     { href: '/services', label: 'Services' },
     { href: '/compliance', label: 'Compliance' },
-    { href: '/contact', label: 'Contact' },
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] max-w-5xl">
+      <nav className="glass rounded-full px-4 sm:px-6 h-14 flex items-center justify-between shadow-glow-blue/10">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-          <div className="h-8 w-8 rounded bg-primary"></div>
-          <span className="hidden sm:inline">Matmon</span>
+        <Link href="/" className="flex items-center gap-2 font-bold text-base sm:text-lg group">
+          <div className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-primary group-hover:shadow-[0_0_15px_rgba(255,30,30,0.8)] transition-all duration-300"></div>
+          <span className="tracking-tighter">MATMON</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-foreground/80 transition-colors hover:text-accent"
+              className="text-xs font-semibold uppercase tracking-widest text-foreground/70 transition-all hover:text-white hover:text-glow-blue"
             >
               {link.label}
             </Link>
@@ -46,7 +45,7 @@ export function Navigation() {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Button asChild className="bg-accent hover:bg-accent/80 text-accent-foreground font-semibold rounded-full px-6">
+          <Button asChild className="bg-white text-black hover:bg-white/90 font-bold rounded-full px-6 h-9 text-xs uppercase tracking-widest">
             <Link href="/contact">Get Started</Link>
           </Button>
         </div>
@@ -54,23 +53,23 @@ export function Navigation() {
         {/* Mobile Menu */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-5 w-5" />
+            <Button variant="ghost" size="icon" className="h-9 w-9 text-white group">
+              <Menu className="h-5 w-5 transition-transform group-hover:scale-110" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] bg-card">
-            <div className="flex flex-col gap-4 py-4">
+          <SheetContent side="top" className="glass border-none h-[100dvh] pt-32 px-8 flex flex-col">
+            <div className="flex flex-col items-center gap-8">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-sm font-medium text-foreground/80 hover:text-accent transition-colors"
+                  className="text-2xl font-bold hover:text-primary transition-colors"
                 >
                   {link.label}
                 </Link>
               ))}
-              <Button asChild className="mt-4 bg-accent hover:bg-accent/80 text-accent-foreground w-full font-semibold rounded-full">
+              <Button asChild className="mt-8 bg-primary hover:bg-primary/90 text-white w-full max-w-xs font-bold rounded-full h-12">
                 <Link href="/contact">Get Started</Link>
               </Button>
             </div>
@@ -80,3 +79,4 @@ export function Navigation() {
     </header>
   );
 }
+

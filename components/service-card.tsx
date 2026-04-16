@@ -10,15 +10,18 @@ interface ServiceCardProps {
 
 export function ServiceCard({ icon: Icon, title, description, href = '#' }: ServiceCardProps) {
   return (
-    <div className="group rounded-xl border border-foreground/10 bg-card/50 p-8 transition-all duration-300 hover:border-primary/50 hover:bg-card hover:shadow-lg hover:shadow-primary/10">
-      <div className="mb-6 inline-flex rounded-lg bg-primary/10 p-3 text-primary transition-colors group-hover:bg-primary/20">
-        <Icon className="h-6 w-6" />
+    <div className="glass-card p-10 bg-white/[0.02] flex flex-col justify-between items-start h-full group hover:border-primary/50 transition-all duration-500">
+      <div>
+        <div className="mb-10 inline-flex rounded-full glass border-white/5 p-4 text-primary shadow-glow-red/20 group-hover:shadow-glow-red transition-all duration-500">
+          <Icon className="h-8 w-8" />
+        </div>
+        <h3 className="mb-6 text-2xl font-black uppercase tracking-tighter text-white group-hover:text-primary transition-colors">{title}</h3>
+        <p className="mb-10 text-muted-foreground font-medium leading-relaxed">{description}</p>
       </div>
-      <h3 className="mb-3 text-xl font-bold">{title}</h3>
-      <p className="mb-6 text-foreground/70 leading-relaxed">{description}</p>
-      <Link href={href} className="inline-flex items-center text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
-        Learn More →
+      <Link href={href} className="text-[10px] font-black uppercase tracking-widest text-secondary hover:text-white transition-colors flex items-center gap-2">
+        Learn More <span className="text-secondary font-bold group-hover:translate-x-1 transition-transform">→</span>
       </Link>
     </div>
   );
 }
+
