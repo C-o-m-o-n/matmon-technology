@@ -1,17 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { Metadata } from 'next';
 import { LayoutWrapper } from '@/components/layout-wrapper';
 import { SectionContainer } from '@/components/section-container';
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, MapPin } from 'lucide-react';
-
-// Note: Metadata can't be used in client components, so it's commented out
-// export const metadata: Metadata = {
-//   title: 'Contact - Matmon Technology',
-//   description: 'Get in touch with Matmon Technology. Located in Kisumu, Kenya.',
-// };
+import { Mail, Phone, MapPin, Send, ArrowRight } from 'lucide-react';
+import { GlowSphere } from '@/components/glow-sphere';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -55,45 +49,51 @@ export default function Contact() {
   return (
     <LayoutWrapper>
       {/* Hero */}
-      <SectionContainer className="py-20 sm:py-32">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-balance">
-            Let&apos;s Talk
+      <SectionContainer className="relative pt-32 pb-20 sm:pt-40 sm:pb-32 overflow-hidden">
+        <GlowSphere color="blue" size="xl" className="-top-40 -left-40 opacity-10" />
+        <div className="max-w-4xl">
+          <p className="text-xs font-black text-secondary uppercase tracking-[0.3em] mb-6 inline-block border-b-2 border-secondary pb-1">Get in Touch</p>
+          <h1 className="text-4xl sm:text-7xl lg:text-8xl font-black leading-[1.1] sm:leading-[0.9] tracking-tighter mb-8 bg-gradient-to-b from-white to-white/50 bg-clip-text text-transparent uppercase">
+            LET&apos;S
+            <br />
+            TALK
           </h1>
-          <p className="text-xl text-foreground/70 mb-8 text-balance">
+          <p className="text-xl text-muted-foreground/80 max-w-2xl leading-relaxed font-medium">
             Have questions about Matmon? Ready to get started? Interested in a partnership? We&apos;d love to hear from you.
           </p>
         </div>
       </SectionContainer>
 
       {/* Contact Form & Info */}
-      <SectionContainer>
+      <SectionContainer className="py-24 border-y border-white/5 bg-white/[0.01]">
         <div className="grid gap-12 lg:grid-cols-3">
           {/* Form */}
           <div className="lg:col-span-2">
-            <div className="rounded-lg border border-border bg-card/50 p-8">
-              <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
+            <div className="glass-card p-12 relative overflow-hidden">
+              <GlowSphere color="red" size="md" className="-bottom-20 -right-20 opacity-10" />
+              <h2 className="text-3xl font-black tracking-tighter mb-10 text-white uppercase">Initialize Project</h2>
               
               {submitted ? (
-                <div className="rounded-lg border border-primary bg-primary/10 p-6 text-center">
-                  <h3 className="text-lg font-semibold mb-2">Thank You!</h3>
-                  <p className="text-foreground/70 mb-4">
-                    We&apos;ve received your message. Our team will get back to you within 24 hours.
+                <div className="py-20 text-center">
+                  <div className="w-20 h-20 rounded-full glass border-primary/50 flex items-center justify-center mx-auto mb-8 shadow-glow-red">
+                    <Send className="h-8 w-8 text-primary" />
+                  </div>
+                  <h3 className="text-3xl font-black tracking-tighter mb-4 text-white uppercase">Message Sent</h3>
+                  <p className="text-muted-foreground mb-10 max-w-sm mx-auto font-medium">
+                    We&apos;ve received your request. A specialist will be in touch within 24 hours.
                   </p>
                   <Button
                     onClick={() => setSubmitted(false)}
-                    className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                    variant="outline"
+                    className="border-white/10 hover:bg-white/5 text-xs font-black uppercase tracking-widest px-8"
                   >
-                    Send Another Message
+                    Send Another
                   </Button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Name */}
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      Full Name
-                    </label>
+                <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Full Name</label>
                     <input
                       type="text"
                       id="name"
@@ -101,32 +101,26 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-card text-foreground placeholder-foreground/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/50 transition-colors"
-                      placeholder="Your name"
+                      className="w-full bg-white/[0.03] border-white/5 focus:border-primary/50 focus:bg-white/[0.05] rounded-none px-4 py-4 text-sm font-bold text-white transition-all outline-none"
+                      placeholder="ENTER NAME"
                     />
                   </div>
 
-                  {/* Company */}
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-medium mb-2">
-                      Company
-                    </label>
+                  <div className="space-y-2">
+                    <label htmlFor="company" className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Company</label>
                     <input
                       type="text"
                       id="company"
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-card text-foreground placeholder-foreground/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/50 transition-colors"
-                      placeholder="Your company name"
+                      className="w-full bg-white/[0.03] border-white/5 focus:border-primary/50 focus:bg-white/[0.05] rounded-none px-4 py-4 text-sm font-bold text-white transition-all outline-none"
+                      placeholder="ENTER COMPANY"
                     />
                   </div>
 
-                  {/* Email */}
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      Email
-                    </label>
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Email Address</label>
                     <input
                       type="email"
                       id="email"
@@ -134,152 +128,117 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-card text-foreground placeholder-foreground/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/50 transition-colors"
-                      placeholder="your@email.com"
+                      className="w-full bg-white/[0.03] border-white/5 focus:border-primary/50 focus:bg-white/[0.05] rounded-none px-4 py-4 text-sm font-bold text-white transition-all outline-none"
+                      placeholder="NAME@PLATFORM.COM"
                     />
                   </div>
 
-                  {/* Phone */}
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                      Phone
-                    </label>
+                  <div className="space-y-2">
+                    <label htmlFor="phone" className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Phone Number</label>
                     <input
                       type="tel"
                       id="phone"
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-card text-foreground placeholder-foreground/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/50 transition-colors"
-                      placeholder="+254..."
+                      className="w-full bg-white/[0.03] border-white/5 focus:border-primary/50 focus:bg-white/[0.05] rounded-none px-4 py-4 text-sm font-bold text-white transition-all outline-none"
+                      placeholder="+254"
                     />
                   </div>
 
-                  {/* Interest */}
-                  <div>
-                    <label htmlFor="interest" className="block text-sm font-medium mb-2">
-                      What are you interested in?
-                    </label>
+                  <div className="space-y-2 sm:col-span-2">
+                    <label htmlFor="interest" className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Service Interest</label>
                     <select
                       id="interest"
                       name="interest"
                       value={formData.interest}
                       onChange={handleChange}
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-card text-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/50 transition-colors"
+                      className="w-full bg-white/[0.03] border-white/5 focus:border-primary/50 focus:bg-white/[0.05] rounded-none px-4 py-4 text-sm font-bold text-white transition-all outline-none appearance-none"
                     >
-                      <option value="colocation">Sovereign Colocation</option>
-                      <option value="private-cloud">Private Cloud</option>
-                      <option value="analytics">Managed Analytics</option>
-                      <option value="iot">IoT & Edge Computing</option>
-                      <option value="ai">AI Inference</option>
-                      <option value="hybrid">Hybrid Cloud</option>
-                      <option value="partnership">Partnership Opportunity</option>
-                      <option value="other">Other</option>
+                      <option value="colocation" className="bg-black">SOVEREIGN COLOCATION</option>
+                      <option value="private-cloud" className="bg-black">PRIVATE CLOUD</option>
+                      <option value="analytics" className="bg-black">MANAGED ANALYTICS</option>
+                      <option value="ai" className="bg-black">AI INFERENCE</option>
+                      <option value="partnership" className="bg-black">PARTNERSHIP</option>
                     </select>
                   </div>
 
-                  {/* Message */}
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Message
-                    </label>
+                  <div className="space-y-2 sm:col-span-2">
+                    <label htmlFor="message" className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Project Details</label>
                     <textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      rows={5}
-                      className="w-full px-4 py-2 rounded-lg border border-border bg-card text-foreground placeholder-foreground/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/50 transition-colors resize-none"
-                      placeholder="Tell us more about your needs..."
+                      rows={4}
+                      className="w-full bg-white/[0.03] border-white/5 focus:border-primary/50 focus:bg-white/[0.05] rounded-none px-4 py-4 text-sm font-bold text-white transition-all outline-none resize-none"
+                      placeholder="TELL US ABOUT YOUR INFRASTRUCTURE NEEDS..."
                     />
                   </div>
 
-                  {/* Submit */}
                   <Button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-medium py-2"
+                    className="sm:col-span-2 w-full bg-primary hover:bg-primary/90 text-white font-black uppercase tracking-widest py-8 rounded-none group"
                   >
-                    {loading ? 'Sending...' : 'Send Message'}
+                    {loading ? 'TRANSMITTING...' : (
+                      <span className="flex items-center gap-3">
+                        Execute Request <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    )}
                   </Button>
-
-                  <p className="text-xs text-foreground/50 text-center">
-                    We&apos;ll respond within 24 hours during business hours.
-                  </p>
                 </form>
               )}
             </div>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-8">
-            {/* Office Location */}
-            <div className="rounded-lg border border-border bg-card/50 p-6">
-              <div className="flex items-start gap-4 mb-4">
-                <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-1" />
+          <div className="space-y-10">
+            <div>
+              <h3 className="text-[10px] font-black uppercase tracking-widest text-primary mb-6">Operations Hub</h3>
+              <div className="flex items-start gap-4">
+                <MapPin className="h-5 w-5 text-primary shrink-0" />
                 <div>
-                  <h3 className="font-semibold mb-1">Kisumu Office</h3>
-                  <p className="text-sm text-foreground/70">
-                    Data Center 1<br />
-                    Kisumu, Kenya
-                  </p>
+                  <p className="text-xl font-black text-white uppercase tracking-tighter">Kisumu Center</p>
+                  <p className="text-sm text-muted-foreground font-medium mt-1">Data Center 1<br />Kisumu, Kenya</p>
                 </div>
               </div>
             </div>
 
-            {/* Email */}
-            <div className="rounded-lg border border-border bg-card/50 p-6">
-              <div className="flex items-start gap-4 mb-4">
-                <Mail className="h-5 w-5 text-accent flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold mb-1">Email</h3>
-                  <p className="text-sm text-foreground/70">
-                    <a href="mailto:info@matmon.tech" className="hover:text-accent transition-colors">
-                      info@matmon.tech
-                    </a>
-                  </p>
-                  <p className="text-sm text-foreground/70 mt-2">
-                    <a href="mailto:support@matmon.tech" className="hover:text-accent transition-colors">
-                      support@matmon.tech
-                    </a>
-                  </p>
+            <div>
+              <h3 className="text-[10px] font-black uppercase tracking-widest text-secondary mb-6">Digital Access</h3>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <Mail className="h-5 w-5 text-secondary shrink-0" />
+                  <div>
+                    <p className="text-xs font-black text-white uppercase">Inquiry</p>
+                    <a href="mailto:info@matmon.tech" className="text-sm text-muted-foreground hover:text-white transition-colors font-medium">info@matmon.tech</a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Phone className="h-5 w-5 text-secondary shrink-0" />
+                  <div>
+                    <p className="text-xs font-black text-white uppercase">Support</p>
+                    <a href="tel:+254" className="text-sm text-muted-foreground hover:text-white transition-colors font-medium">+254 (0) 700 000 000</a>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Phone */}
-            <div className="rounded-lg border border-border bg-card/50 p-6">
-              <div className="flex items-start gap-4 mb-4">
-                <Phone className="h-5 w-5 text-accent flex-shrink-0 mt-1" />
-                <div>
-                  <h3 className="font-semibold mb-1">Phone</h3>
-                  <p className="text-sm text-foreground/70">
-                    <a href="tel:+254" className="hover:text-accent transition-colors">
-                      +254 (0) 700 000 000
-                    </a>
-                  </p>
-                  <p className="text-xs text-foreground/60 mt-2">
-                    24/7 Support Available
-                  </p>
+            <div className="glass-card p-8 border-white/5">
+              <h3 className="text-[10px] font-black uppercase tracking-widest text-white mb-6">Live Status</h3>
+              <dl className="space-y-4">
+                <div className="flex justify-between items-center text-xs">
+                  <dt className="font-black text-muted-foreground uppercase">Network</dt>
+                  <dd className="font-black text-secondary uppercase animate-pulse">Online</dd>
                 </div>
-              </div>
-            </div>
-
-            {/* Hours */}
-            <div className="rounded-lg border border-border bg-card/50 p-6">
-              <h3 className="font-semibold mb-3">Business Hours</h3>
-              <dl className="text-sm space-y-2 text-foreground/70">
-                <div className="flex justify-between">
-                  <dt>Monday - Friday</dt>
-                  <dd className="font-medium">8AM - 6PM EAT</dd>
+                <div className="flex justify-between items-center text-xs">
+                  <dt className="font-black text-muted-foreground uppercase">Support</dt>
+                  <dd className="font-black text-white uppercase">24/7 ACTIVE</dd>
                 </div>
-                <div className="flex justify-between">
-                  <dt>Saturday - Sunday</dt>
-                  <dd className="font-medium">Emergency Only</dd>
-                </div>
-                <div className="flex justify-between">
-                  <dt>Support Available</dt>
-                  <dd className="font-medium text-accent">24/7</dd>
+                <div className="flex justify-between items-center text-xs">
+                  <dt className="font-black text-muted-foreground uppercase">Timezone</dt>
+                  <dd className="font-black text-white uppercase">UTC +3</dd>
                 </div>
               </dl>
             </div>
@@ -287,24 +246,13 @@ export default function Contact() {
         </div>
       </SectionContainer>
 
-      {/* Map Section */}
-      <SectionContainer className="bg-card/30">
-        <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold mb-2">Visit Us</h2>
-          <p className="text-foreground/70">Located in Kisumu, Kenya</p>
-        </div>
-
-        <div className="rounded-lg border border-border overflow-hidden aspect-video bg-card">
-          <div className="w-full h-full bg-gradient-to-br from-primary/20 via-transparent to-accent/10 flex items-center justify-center">
-            <p className="text-foreground/50">Map Location - Kisumu, Kenya</p>
-          </div>
-        </div>
-      </SectionContainer>
-
       {/* FAQ */}
-      <SectionContainer>
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+      <SectionContainer className="py-32 pb-48">
+        <div className="text-center mb-24">
+          <h2 className="text-3xl sm:text-6xl font-black tracking-tighter uppercase mb-6 leading-[1.1]">TRANSPARENCY</h2>
+          <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto font-medium">
+            Frequently Asked Questions
+          </p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -325,18 +273,10 @@ export default function Contact() {
               q: 'What happens if I need more capacity?',
               a: 'We can provision additional resources within days. There are no penalties for scaling up or down your infrastructure with advance notice.',
             },
-            {
-              q: 'Do you offer managed services?',
-              a: 'Yes. Beyond colocation, we offer managed analytics, private cloud, and AI inference. Contact us to discuss your specific needs.',
-            },
-            {
-              q: 'What about disaster recovery?',
-              a: 'Redundancy is built into everything. Backups are maintained on-site. We recommend off-site backups with your explicit consent.',
-            },
           ].map((item, idx) => (
-            <div key={idx} className="rounded-lg border border-border bg-card/50 p-6">
-              <h3 className="font-semibold text-lg mb-2">{item.q}</h3>
-              <p className="text-sm text-foreground/70">{item.a}</p>
+            <div key={idx} className="glass-card p-10 bg-white/[0.02]">
+              <h3 className="font-black text-lg text-white uppercase tracking-tighter mb-4">{item.q}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed font-medium">{item.a}</p>
             </div>
           ))}
         </div>
@@ -344,3 +284,4 @@ export default function Contact() {
     </LayoutWrapper>
   );
 }
+
