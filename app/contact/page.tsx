@@ -13,7 +13,7 @@ export default function Contact() {
     company: '',
     email: '',
     phone: '',
-    interest: 'colocation',
+    interest: 'infrastructure',
     message: '',
   });
 
@@ -40,7 +40,7 @@ export default function Contact() {
         company: '',
         email: '',
         phone: '',
-        interest: 'colocation',
+        interest: 'infrastructure',
         message: '',
       });
     }, 1000);
@@ -71,7 +71,7 @@ export default function Contact() {
           <div className="lg:col-span-2">
             <div className="glass-card p-12 relative overflow-hidden">
               <GlowSphere color="red" size="md" className="-bottom-20 -right-20 opacity-10" />
-              <h2 className="text-3xl font-black tracking-tighter mb-10 text-white uppercase">Initialize Project</h2>
+              <h2 className="text-3xl font-black tracking-tighter mb-10 text-white uppercase">Request Infrastructure Audit</h2>
               
               {submitted ? (
                 <div className="py-20 text-center">
@@ -155,11 +155,10 @@ export default function Contact() {
                       onChange={handleChange}
                       className="w-full bg-white/[0.03] border-white/5 focus:border-primary/50 focus:bg-white/[0.05] rounded-none px-4 py-4 text-sm font-bold text-white transition-all outline-none appearance-none"
                     >
-                      <option value="colocation" className="bg-black">SOVEREIGN COLOCATION</option>
-                      <option value="private-cloud" className="bg-black">PRIVATE CLOUD</option>
-                      <option value="analytics" className="bg-black">MANAGED ANALYTICS</option>
-                      <option value="ai" className="bg-black">AI INFERENCE</option>
-                      <option value="partnership" className="bg-black">PARTNERSHIP</option>
+                      <option value="infrastructure" className="bg-black">INFRASTRUCTURE AUDIT</option>
+                      <option value="construction" className="bg-black">SMART BUILD INQUIRY</option>
+                      <option value="intelligence" className="bg-black">URBAN INTELLIGENCE DEMO</option>
+                      <option value="partnership" className="bg-black">GENERAL PARTNERSHIP</option>
                     </select>
                   </div>
 

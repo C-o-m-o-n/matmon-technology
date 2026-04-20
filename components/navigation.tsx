@@ -14,10 +14,9 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
     { href: '/infrastructure', label: 'Infrastructure' },
-    { href: '/services', label: 'Services' },
+    { href: '/construction', label: 'Construction' },
+    { href: '/intelligence', label: 'Intelligence' },
     { href: '/compliance', label: 'Compliance' },
   ];
 
@@ -27,7 +26,7 @@ export function Navigation() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 font-bold text-base sm:text-lg group">
           <div className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-primary group-hover:shadow-[0_0_15px_rgba(255,30,30,0.8)] transition-all duration-300"></div>
-          <span className="tracking-tighter">MATMON</span>
+          <span className="tracking-tighter">MATMON AFRICA</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -46,7 +45,7 @@ export function Navigation() {
         {/* CTA Button */}
         <div className="hidden md:block">
           <Button asChild className="bg-white text-black hover:bg-white/90 font-bold rounded-full px-6 h-9 text-xs uppercase tracking-widest">
-            <Link href="/contact">Get Started</Link>
+            <Link href="/contact">Partner With Us</Link>
           </Button>
         </div>
 
@@ -70,7 +69,7 @@ export function Navigation() {
                 </Link>
               ))}
               <Button asChild className="mt-8 bg-primary hover:bg-primary/90 text-white w-full max-w-xs font-bold rounded-full h-12">
-                <Link href="/contact">Get Started</Link>
+                <Link href="/contact">Partner With Us</Link>
               </Button>
             </div>
           </SheetContent>
