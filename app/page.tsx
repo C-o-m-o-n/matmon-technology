@@ -53,7 +53,7 @@ export default function Home() {
       </SectionContainer>
 
       {/* Trust Bar - Monochrome Minimalist */}
-      <SectionContainer className="pb-24 border-b border-white/5">
+      {/* <SectionContainer className="pb-24 border-b border-white/5">
         <div className="text-center mb-12">
           <p className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground/60">Trusted by leading organizations</p>
         </div>
@@ -64,7 +64,7 @@ export default function Home() {
           <div className="text-xl sm:text-2xl font-black tracking-tighter">PARTNER 04</div>
           <div className="text-xl sm:text-2xl font-black tracking-tighter">PARTNER 05</div>
         </div>
-      </SectionContainer>
+      </SectionContainer> */}
 
       {/* Infrastructure Section - Earth/Blue Style */}
       <SectionContainer className="py-32 lg:py-48 relative overflow-hidden">
@@ -101,10 +101,10 @@ export default function Home() {
         <div className="text-center mb-24 max-w-3xl mx-auto">
           <p className="text-xs font-black text-primary uppercase tracking-[0.3em] mb-6">Our Roadmap</p>
           <h2 className="text-3xl sm:text-6xl font-black leading-[1.1] sm:leading-[0.9] tracking-tighter mb-8">
-            STREAMLINED MATMON COMPUTE CAPACITY FOR AFRICAN ENTERPRISES
+            STREAMLINED COMPUTE CAPACITY FOR KENYAN ENTERPRISES
           </h2>
           <p className="text-muted-foreground leading-relaxed font-medium">
-            From day one, we focused on making sovereign infrastructure accessible and reliable for African businesses. Every phase is built with local compliance and sustainability in mind.
+            From day one, we focused on making infrastructure accessible and reliable for Kenyan businesses. Every phase is built with local compliance and sustainability in mind.
           </p>
         </div>
 
@@ -146,7 +146,7 @@ export default function Home() {
         <GlowSphere color="red" size="lg" className="top-1/2 left-0 opacity-10" />
         <div className="text-center mb-24">
           <h2 className="text-3xl sm:text-7xl font-black leading-[1.1] sm:leading-none tracking-tighter mb-8">
-            BECOME A MATMON PARTNER
+            BECOME OUR DATA PARTNER
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed font-medium">
             Build on sovereign infrastructure engineered for reliability and compliance. Get 24/7 local support and transparent pricing.
@@ -237,7 +237,7 @@ export default function Home() {
 
           {/* Enterprise Card - Red Highlight */}
           <div className="glass-card p-14 border-primary bg-primary/10 relative z-10 lg:scale-110 shadow-glow-red/20 shadow-2xl">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 -translate-y-1/2">
               <span className="bg-primary text-white text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-widest">Most Popular</span>
             </div>
             <p className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-8 mt-4">Enterprise Edition</p>

@@ -13,8 +13,8 @@ export function TimelineCard({ phase, status, description, stats, isActive = fal
   return (
     <div className={`glass-card p-10 transition-all duration-500 relative group overflow-hidden ${
       isActive 
-        ? 'border-primary/50 bg-primary/[0.03] shadow-glow-red/10' 
-        : 'border-white/5 bg-white/[0.01] hover:bg-white/[0.03] hover:border-white/20'
+        ? 'border-primary/50 bg-primary/3 shadow-glow-red/10' 
+        : 'border-white/5 bg-white/1 hover:bg-white/3 hover:border-white/20'
     }`}>
       {isActive && (
         <div className="absolute top-0 right-0 p-6">
