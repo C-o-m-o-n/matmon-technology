@@ -1,32 +1,31 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from '@/components/ui/sheet';
+import { useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { href: '/infrastructure', label: 'Infrastructure' },
-    { href: '/construction', label: 'Construction' },
-    { href: '/intelligence', label: 'Intelligence' },
-    { href: '/compliance', label: 'Compliance' },
+    { href: "/infrastructure", label: "Infrastructure" },
+    { href: "/construction", label: "Construction" },
+    { href: "/intelligence", label: "Intelligence" },
+    { href: "/compliance", label: "Compliance" },
   ];
 
   return (
     <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] sm:w-[calc(100%-2rem)] max-w-5xl">
       <nav className="glass rounded-full px-4 sm:px-6 h-14 flex items-center justify-between shadow-glow-blue/10">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-bold text-base sm:text-lg group">
+        <Link
+          href="/"
+          className="flex items-center gap-2 font-bold text-base sm:text-lg group"
+        >
           <div className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-primary group-hover:shadow-[0_0_15px_rgba(255,30,30,0.8)] transition-all duration-300"></div>
-          <span className="tracking-tighter">MATMON AFRICA</span>
+          <span className="tracking-tighter">MATMON TECHNOLOGY</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -44,7 +43,10 @@ export function Navigation() {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <Button asChild className="bg-white text-black hover:bg-white/90 font-bold rounded-full px-6 h-9 text-xs uppercase tracking-widest">
+          <Button
+            asChild
+            className="bg-white text-black hover:bg-white/90 font-bold rounded-full px-6 h-9 text-xs uppercase tracking-widest"
+          >
             <Link href="/contact">Partner With Us</Link>
           </Button>
         </div>
@@ -52,11 +54,18 @@ export function Navigation() {
         {/* Mobile Menu */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" className="h-9 w-9 text-white group">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-9 w-9 text-white group"
+            >
               <Menu className="h-5 w-5 transition-transform group-hover:scale-110" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="top" className="glass border-none h-[100dvh] pt-32 px-8 flex flex-col">
+          <SheetContent
+            side="top"
+            className="glass border-none h-[100dvh] pt-32 px-8 flex flex-col"
+          >
             <div className="flex flex-col items-center gap-8">
               {links.map((link) => (
                 <Link
@@ -68,7 +77,10 @@ export function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <Button asChild className="mt-8 bg-primary hover:bg-primary/90 text-white w-full max-w-xs font-bold rounded-full h-12">
+              <Button
+                asChild
+                className="mt-8 bg-primary hover:bg-primary/90 text-white w-full max-w-xs font-bold rounded-full h-12"
+              >
                 <Link href="/contact">Partner With Us</Link>
               </Button>
             </div>
@@ -78,4 +90,3 @@ export function Navigation() {
     </header>
   );
 }
-
