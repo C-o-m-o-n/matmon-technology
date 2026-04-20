@@ -35,13 +35,13 @@ export default function About() {
             <h2 className="text-3xl sm:text-5xl font-black tracking-tighter mb-8 uppercase leading-[1.1]">Our Story</h2>
             <div className="space-y-6 text-muted-foreground font-medium underline-offset-4">
               <p>
-                For decades, African businesses have relied on data infrastructure thousands of kilometers away. Latency, compliance complexity, and lack of local control became accepted constraints.
+                Matmon Africa isn't just a construction company; we are a technology group that treats buildings as hardware and data as the operating system. 
               </p>
               <p>
-                We asked: <span className="text-white italic">What if that didn&apos;t have to be the case?</span>
+                Based in Kisumu, we are filling the gap in Kenya’s digital landscape by providing the storage, security, and smart-build capabilities required for the next decade of urban growth.
               </p>
               <p>
-                Matmon Technology was founded on the belief that Africa has the talent, resources, and market to build world-class digital infrastructure locally. We&apos;re not importing solutions—we&apos;re building them.
+                We believe that Africa has the talent, resources, and market to build world-class digital infrastructure locally. We're not importing solutions—we're building them.
               </p>
             </div>
           </div>

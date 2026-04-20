@@ -5,14 +5,14 @@ export function Footer() {
   return (
     <footer className="bg-background pt-24 pb-12 overflow-hidden relative">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-12 mb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 mb-24">
           <div className="sm:col-span-2 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 font-bold text-2xl mb-6">
               <div className="h-6 w-6 rounded-full bg-primary shadow-glow-red/50"></div>
-              <span>MATMON</span>
+              <span>MATMON AFRICA</span>
             </Link>
             <p className="text-muted-foreground max-w-xs text-sm leading-relaxed">
-              Kenya&apos;s sovereign data center operator. Enabling African businesses to own their data and power the next generation of digital infrastructure.
+              Building the Data Infrastructure Layer for Africa’s Built Environment. From sovereign cloud hosting in Kisumu to AI-driven smart construction.
             </p>
           </div>
 
@@ -22,7 +22,8 @@ export function Footer() {
               <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
               <li><Link href="/about" className="hover:text-primary transition-colors">About Us</Link></li>
               <li><Link href="/infrastructure" className="hover:text-primary transition-colors">Infrastructure</Link></li>
-              <li><Link href="/services" className="hover:text-primary transition-colors">Services</Link></li>
+              <li><Link href="/construction" className="hover:text-primary transition-colors">Smart Build</Link></li>
+              <li><Link href="/intelligence" className="hover:text-primary transition-colors">Urban Intelligence</Link></li>
             </ul>
           </div>
 
@@ -36,15 +37,6 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-6">Web3</h3>
-            <ul className="space-y-4 text-sm text-muted-foreground font-medium">
-              <li><a href="#" className="hover:text-primary transition-colors">Whitepaper</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Staking</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Governance</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Foundation</a></li>
-            </ul>
-          </div>
 
           <div>
             <h3 className="text-xs font-bold uppercase tracking-widest text-white mb-6">Community</h3>
