@@ -95,9 +95,9 @@ export default function About() {
 
         <div className="grid gap-8 md:grid-cols-3">
           {[
-            { name: 'Jane Kipchoge', role: 'Founder & CEO' },
-            { name: 'Dr. Kamau Omondi', role: 'Chief Technology Officer' },
-            { name: 'Amara Okafor', role: 'Chief Operations Officer' },
+            { name: 'Collins Omondi', role: 'Chief Technology Officer' },
+            { name: 'Magic Onyango', role: 'Role' },
+            { name: 'Oscar Otieno', role: 'Role' },
           ].map((member) => (
             <div key={member.name} className="glass-card p-10 text-center group">
               <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 mx-auto mb-8 border border-white/5 group-hover:scale-110 transition-transform"></div>

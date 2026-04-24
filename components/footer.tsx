@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -11,8 +12,13 @@ export function Footer() {
               href="/"
               className="flex items-center gap-2 font-bold text-2xl mb-6"
             >
-              <div className="h-6 w-6 rounded-full bg-primary shadow-glow-red/50"></div>
-              <span>MATMON TECHNOLOGY</span>
+              <Image
+                src="/logos/matmon-tech-full-white.svg"
+                alt="MATMON TECHNOLOGY"
+                className="h-8 w-auto"
+                width={200}
+                height={32}
+              />
             </Link>
             <p className="text-muted-foreground max-w-xs text-sm leading-relaxed">
               Building the Data Infrastructure Layer for Africa’s Built
