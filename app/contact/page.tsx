@@ -287,10 +287,10 @@ export default function Contact() {
                       Inquiry
                     </p>
                     <a
-                      href="mailto:tech@matmonafrica.com"
+                      href="mailto:dev@matmonafrica.com"
                       className="text-sm text-muted-foreground hover:text-white transition-colors font-medium"
                     >
-                      tech@matmonafrica.com
+                      dev@matmonafrica.com
                     </a>
                   </div>
                 </div>

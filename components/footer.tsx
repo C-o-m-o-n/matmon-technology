@@ -85,7 +85,7 @@ export function Footer() {
                   Compliance
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <a href="#" className="hover:text-primary transition-colors">
                   Press
                 </a>
@@ -98,8 +98,9 @@ export function Footer() {
               <li>
                 <a href="#" className="hover:text-primary transition-colors">
                   FAQ
-                </a>
+                </a> 
               </li>
+                */}
             </ul>
           </div>
 
@@ -124,13 +125,13 @@ export function Footer() {
           </p>
           <div className="flex gap-4">
             <a
-              href="#"
+              href="mailto:dev@matmonafrica.com"
               className="h-10 w-10 rounded-full border border-white/5 flex items-center justify-center hover:bg-white/5 transition-colors"
             >
               <Mail className="h-4 w-4" />
             </a>
             <a
-              href="#"
+              href="tel:+254729931532"
               className="h-10 w-10 rounded-full border border-white/5 flex items-center justify-center hover:bg-white/5 transition-colors"
             >
               <Phone className="h-4 w-4" />
