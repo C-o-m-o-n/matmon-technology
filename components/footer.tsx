@@ -13,7 +13,7 @@ export function Footer() {
               className="flex items-center gap-2 font-bold text-2xl mb-6"
             >
               <Image
-                src="/logos/matmon-tech-full-white.svg"
+                src="/logos/matmon-tech-full.svg"
                 alt="MATMON TECHNOLOGY"
                 className="h-8 w-auto"
                 width={200}
